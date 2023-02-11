@@ -16,7 +16,6 @@ public class RatingsController {
 
     @GetMapping("/user/rating/{userId}")
     public UserRating getRatingByMovie(@PathVariable String userId){
-        userRatingRepo.save(new UserRating(userId,Arrays.asList(new Rating("123", 4),new Rating("1234", 5))));
         return userRatingRepo.findById(userId).orElseThrow();
     }
 }
